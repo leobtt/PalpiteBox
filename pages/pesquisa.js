@@ -84,8 +84,7 @@ const Pesquisa = () => {
       {sucess && 
         <div className='mx-auto w-80  p-3'>
           <p className='mb-4 text-center bg-green-100 border-t border-b border-green-500 text-black px-4 py-4'>Obrigado por contribuir com sua sugestão/crítica.</p>
-        </div>
-      } 
+        
       {retorno.showCoupon && <div className='px-4 py-3 w-72 mx-auto text-center border'>Seu cupom: <br /> 
       <span className='text-2xl font-bold'>{retorno.Cupom}</span></div>}
 
@@ -93,7 +92,8 @@ const Pesquisa = () => {
       <span className='font-bold'>{retorno.Promo}</span><br/>
         <p className='mt-3'>Tire um print e apresente no local.</p>
       </div>}
-
+      </div>
+      } 
       
     </div>
   )
