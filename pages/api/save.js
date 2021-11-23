@@ -42,13 +42,12 @@ export default async(req, res) => {
       Cupom,
       Promo,
       Sugestao: data.Sugestao
-    }).then(
-      res.end(JSON.stringify({
-        showCoupon: Cupom !== '',
-        Cupom,
-        Promo,
-      }))
-    )
+    })
+    res.end(JSON.stringify({
+      showCoupon: Cupom !== '',
+      Cupom,
+      Promo,
+    }))
   } catch(err){
     console.log(err)
     res.end('error')
