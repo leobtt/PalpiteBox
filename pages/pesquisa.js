@@ -74,8 +74,6 @@ const Pesquisa = () => {
             )
           })}
           </div>    
-         <pre>{JSON.stringify(form,null,2)}</pre>
-          
 
           <button onClick={save} className='bg-blue-400 py-4 px-6 rounded-md shadow-lg hover:shadow-xl mx-8 font-bold text-white hover:text-black'>
             Salvar
