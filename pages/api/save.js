@@ -9,8 +9,6 @@ const genCupom = () =>{
   return generate.substring(0,4) + '-' + generate.substring(4,8) + '-' + generate.substring(9, 13)
 }
 
-
-
 export default async(req, res) => {
   try{
     await doc.useServiceAccountAuth({
@@ -24,7 +22,7 @@ export default async(req, res) => {
 
     const sheetConfig = doc.sheetsByIndex[2]
     await sheetConfig.loadCells('A3:B3')
-   
+    
     const booleanPromo = sheetConfig.getCell(2,0)
     const textPromo = sheetConfig.getCell(2,1)
 
@@ -52,6 +50,7 @@ export default async(req, res) => {
       }))
     )
   } catch(err){
-    res.end(err)
+    console.log(err)
+    res.end('error')
   }
 }
