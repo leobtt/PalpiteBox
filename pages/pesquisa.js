@@ -3,18 +3,20 @@ import Link from 'next/link'
 import PageTitle from './components/PageTitle'
 import { mask, unMask } from 'remask'
 import * as yup from 'yup'
+import InputField from '../pages/components/form/InputField'
+import Button from './components/form/Button'
 
 const schema = yup.object().shape({
-  Nome: yup.string().required('O campo nome é obrigatório'),
+  Nome: yup.string().required('Campo nome é obrigatório'),
   Email: yup
     .string()
-    .required('O campo e-mail é obrigatório')
-    .email('O campo e-mail não é válido'),
+    .required('Campo e-mail é obrigatório')
+    .email('Campo e-mail não é válido'),
   Whatsapp: yup
     .string()
     .required('O campo telefone é obrigatório')
-    .min(16, 'Digite o telefone corretamente'),
-  Sugestao: yup.string().required('O campo obrigatório'),
+    .min(16, 'Telefone inválido'),
+  Sugestao: yup.string().required('Campo obrigatório'),
   Nota: yup.string(' ').required('Avalie de 0 a 5'),
 })
 
@@ -30,15 +32,12 @@ const Pesquisa = () => {
   const [sucess, setSucess] = useState(false)
   const [returns, setReturn] = useState({})
   const [error, setError] = useState({})
-  const [focused, setFocused] = useState(false)
-
-  const handleBlur = (evt) => {
-    setFocused(true)
-  }
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     const validation = async () => {
-      const hasError = await schema.isValid(form)
+      const HasError = await schema.isValid(form)
+      setHasError(HasError)
       try {
         await schema.validate(form, { abortEarly: false })
         setError({})
@@ -81,7 +80,6 @@ const Pesquisa = () => {
     }))
   }
 
-  const notaValue = [0, 1, 2, 3, 4, 5]
   return (
     <div>
       <PageTitle title="Pesquisa" />
@@ -93,110 +91,47 @@ const Pesquisa = () => {
         Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
       {!sucess && (
-        <form
-          onSubmit={save}
-          className="m-2 mx-auto w-80 md:w-96 flex flex-col px-5"
-        >
-          <label
-            htmlFor="Nome"
-            className="pl-1 mb-1 flex justify-between font-bold"
-          >
-            Seu Nome:
-            {error.Nome && focused === true && (
-              <span className="w-auto rounded bg-red-400 mr-1 px-3">
-                {error.Nome}
-              </span>
-            )}
-          </label>{' '}
-          <input
-            type="text"
-            placeholder="Nome"
-            onChange={onChange}
-            onBlur={handleBlur}
-            focused={focused.toString()}
+        <div className="m-2 mx-auto w-80 md:w-96 flex flex-col px-5">
+          <InputField
             name="Nome"
             value={form.Nome}
-            className="mb-4 bg-blue-100 border-green-500 focus:shadow-lg w-100 shadow-md rounded-lg py-4 px-5"
-          />
-          <label
-            htmlFor="Email"
-            className="pl-1 mb-1 flex justify-between font-bold"
-          >
-            E-mail:
-            <span className="w-auto rounded bg-red-400 mr-1 px-3">
-              {error.Email}
-            </span>
-          </label>
-          <input
-            type="text"
-            placeholder="E-mail"
             onChange={onChange}
-            onBlur={handleBlur}
-            focused={focused.toString()}
+            error={error.Nome}
+            type="text"
+          />
+          <InputField
             name="Email"
             value={form.Email}
-            className="mb-4 bg-blue-100 border-green-500 focus:shadow-lg w-100 shadow-md rounded-lg py-4 px-5"
-          />
-          <label htmlFor="Whatsapp" className="pl-1 font-bold">
-            Whatsapp:
-          </label>
-          <input
-            type="text"
-            placeholder="Whatsapp"
             onChange={onChange}
-            onBlur={handleBlur}
-            focused={focused.toString()}
-            id="Whatsapp"
+            error={error.Email}
+            type="text"
+          />
+          <InputField
             name="Whatsapp"
             value={form.Whatsapp}
-            className="mb-4 bg-blue-100 border-green-500 focus:shadow-lg w-100 shadow-md rounded-lg py-4 px-5"
-          />
-          <label htmlFor="Sugestao" className="pl-1 font-bold">
-            Sua crítica ou sugestão:
-          </label>
-          <input
-            type="text"
-            placeholder=""
             onChange={onChange}
-            onBlur={handleBlur}
-            focused={focused.toString()}
+            error={error.Whatsapp}
+            type="text"
+          />
+          <InputField
             name="Sugestao"
             value={form.Sugestao}
-            className="mb-4 bg-blue-100 border-green-500 focus:shadow-lg w-100 shadow-md rounded-lg py-4 px-5"
+            onChange={onChange}
+            error={error.Sugestao}
+            type="text"
           />
-          <label htmlFor="Nota" className="pl-1 font-bold">
-            Nota:
-          </label>
           <div className="flex mt-4 mb-4">
-            {notaValue.map((nota) => {
-              return (
-                <label
-                  key={nota}
-                  className="text-center mx-auto grid grid-rows-2 grid-flow-col gap-1"
-                >
-                  {nota}
-                  <input
-                    className="w-5 "
-                    type="radio"
-                    name="Nota"
-                    onChange={onChange}
-                    onBlur={handleBlur}
-                    focused={focused.toString()}
-                    value={nota}
-                  />
-                </label>
-              )
-            })}
+            <InputField
+              name="Nota"
+              value={form.Nota}
+              onChange={onChange}
+              error={error.Nota}
+              type="radio"
+            />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-400 mx-auto py-4 px-6 rounded-md shadow-lg hover:shadow-xl mx-8 font-bold text-white hover:text-green-400"
-          >
-            Salvar
-          </button>
-          <pre>{JSON.stringify(form, null, 2)}</pre>
-          <pre>{JSON.stringify(error, null, 2)}</pre>
-        </form>
+          {hasError && <Button value="Salvar" onClick={save} />}
+          {!hasError && <Button value="Salvar" />}
+        </div>
       )}
 
       {sucess && (
