@@ -12,6 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@hookform/resolvers": "^2.8.5",
     "autoprefixer": "^9.8.6",
     "google-spreadsheet": "^3.2.0",
     "moment": "^2.29.1",
@@ -19,8 +20,10 @@
     "postcss-import": "^14.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "remask": "^0.1.0-alpha.5",
+    "react-hook-form": "^7.22.5",
+    "react-input-mask": "^2.0.4",
     "swr": "^1.0.1",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "yup": "^0.32.11"
   }
 }

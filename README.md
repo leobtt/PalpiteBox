@@ -13,6 +13,8 @@ Uma versão online deste projeto pode ser encontrada em: https://palpite-box-leo
   rapidly building custom designs.
 - [Figma](https://figma.com/) - Online prototyping tool.
 - [Google Sheets](https://drive.google.com) - Google online spreadsheets
+- [Momentjs](https://momentjs.com/) - Workink with dates
+- [SWR](https://swr.vercel.app/)
 
 ## Início
 
