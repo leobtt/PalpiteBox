@@ -5,13 +5,11 @@ import PageTitle from './components/PageTitle'
 const Sobre = () => {
   return (
     <div>
-      <PageTitle title='Sobre'/>
-      <h1>Sobre</h1>
-      <div>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </div>
+      <PageTitle title="Sobre" />
+      <h1 className="text-center text-2xl font-bold">Sobre</h1>
+      <h2>
+        Inserir aqui as informações contendo a história do estabelecimento!
+      </h2>
     </div>
   )
 }
