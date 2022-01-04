@@ -3,12 +3,10 @@ import Header from '../header'
 import Footer from '../footer'
 
 const Layout = ({ children }) => {
-  return(
-    <div>
+  return (
+    <div className="h-screen flex flex-col justify-between">
       <Header />
-      <div className='container mx-auto'>
-        { children }
-      </div>
+      <div className="container mx-auto">{children}</div>
       <Footer />
     </div>
   )
