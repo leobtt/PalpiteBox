@@ -4,7 +4,7 @@ Este projeto foi construído durante a Semana Fullstack Master do [DevPleno](htt
 
 Uma versão online deste projeto pode ser encontrada em: https://palpite-box-leobtt.vercel.app/.
 
-![Preview](https://github.com/leobtt/PalpiteBox/issues/1#issue-1093867496)
+![Preview](https://user-images.githubusercontent.com/54782652/148142425-253ccb9e-bc41-40b5-b2c3-d2ae6ad46e30.gif)
 
 ## Construído com:
 
