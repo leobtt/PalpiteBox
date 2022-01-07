@@ -6,7 +6,9 @@ const Layout = ({ children }) => {
   return (
     <div className="h-screen flex flex-col">
       <Header />
-      <div className="container flex justify-center">{children}</div>
+      <div className="w-screen flex justify-center items-center">
+        {children}
+      </div>
       <Footer />
     </div>
   )

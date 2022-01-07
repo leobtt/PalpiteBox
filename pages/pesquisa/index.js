@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PageTitle from '../components/PageTitle'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { mask, unMask } from 'remask'
 import * as yup from 'yup'
 import Form from './Form'
 
