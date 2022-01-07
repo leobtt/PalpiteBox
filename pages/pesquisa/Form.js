@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import InputMask from 'react-input-mask'
-import { span, input, label } from '../components/form/classNames'
-
 import { yupResolver } from '@hookform/resolvers/yup'
 import schema from '../../utils/schema'
-import * as yup from 'yup'
 
-const form = ['Nome', 'Email', 'Whatsapp', 'Sugestao', 'Nota']
+//const form = ['Nome', 'Email', 'Whatsapp', 'Sugestao', 'Nota']
+const { span, input, label } = {
+  span: 'w-auto rounded text-red-300 px-3 font-normal',
+  input:
+    'mb-4 bg-blue-100 border-green-500 focus:shadow-lg w-100 shadow-md rounded-lg py-4 px-5',
+  label: 'pl-1 mb-1 flex justify-between font-bold',
+}
+
 const satisfactionValue = [1, 2, 3, 4, 5]
 const Form = ({ onSubmit, loading }) => {
   const {
@@ -78,7 +81,7 @@ const Form = ({ onSubmit, loading }) => {
             className={input}
             mask="(99) 9 9999-9999"
             maskChar=""
-            Placeholder="(DD) 9 9999-9999"
+            placeholder="(DD) 9 9999-9999"
           />
         )}
         name="Whatsapp"
@@ -113,12 +116,7 @@ const Form = ({ onSubmit, loading }) => {
       <div className="flex justify-around mb-8">
         {satisfactionValue.map((item) => (
           <label key={item} className="ml-1 mt-2">
-            <input
-              type="radio"
-              value={item}
-              defaultValue=""
-              {...register('Nota')}
-            />
+            <input type="radio" value={item} {...register('Nota')} />
           </label>
         ))}
       </div>
