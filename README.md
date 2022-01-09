@@ -20,6 +20,7 @@ Uma versão online deste projeto pode ser encontrada em: https://palpite-box-leo
 - [Figma](https://figma.com/) - Online prototyping tool.
 - [Google Sheets](https://drive.google.com) - Google online spreadsheets
 - [Momentjs](https://momentjs.com/) - Working with dates
+- [React Hook Form](https://react-hook-form.com/get-started) - Forms
 - [SWR](https://swr.vercel.app/)
 
 ## 🏃 Início
