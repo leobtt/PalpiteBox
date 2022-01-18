@@ -29,18 +29,6 @@ const Form = ({ onSubmit, loading }) => {
       onSubmit={handleSubmit(onSubmit)}
       className="m-2 mx-auto w-80 md:w-96 flex flex-col px-5"
     >
-      {/* {form.map((field) => (
-        <>
-          <label key={field} htmlFor={field} className={label}>
-            {field}
-            {errors[field]?.message && (
-              <span className={span}>{errors[field].message}</span>
-            )}
-          </label>
-          <input type="text" className={input} {...register(field)} />
-        </>
-      ))} */}
-
       <label htmlFor="Nome" className={label}>
         Nome
         {errors.Nome?.message && (
