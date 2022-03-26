@@ -10,7 +10,7 @@ Este projeto foi construído durante a Semana Fullstack Master do [DevPleno](htt
 
 Uma versão online deste projeto pode ser encontrada em: https://palpite-box-leobtt.vercel.app/.
 
-![Preview](https://github.com/tuliofaria/palpite-box/blob/master/print.png?raw=true)
+![palpiteBox](https://user-images.githubusercontent.com/54782652/160255811-bc200ea7-382d-46ce-8f88-355610572150.gif)
 
 ## 🚀 Construído com:
 
