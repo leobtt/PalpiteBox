@@ -6,7 +6,7 @@
 
 ---
 
-Este projeto foi construído durante a Semana Fullstack Master do [DevPleno](https://devpleno.com) Consiste numa caixa de sugestões na qual os clientes podem deixar opiniões e sugestões sobre os estabelecimentos comerciais e, em troca, receber cupons de descontos e vantagens. A aplicação conta com integração à uma Planilha do Google, na qual o dono do estabelecimento pode definir as configurações do cupom de desconto, além de ter a listagem completa dos clientes e suas avaliações.
+Consiste numa caixa de sugestões na qual os clientes podem deixar opiniões e sugestões sobre os estabelecimentos comerciais e, em troca, receber cupons de descontos e vantagens. A aplicação conta com integração à uma Planilha do Google, na qual o dono do estabelecimento pode definir as configurações do cupom de desconto, além de ter a listagem completa dos clientes e suas avaliações.
 
 Uma versão online deste projeto pode ser encontrada em: https://palpite-box-leobtt.vercel.app/.
 
@@ -21,6 +21,7 @@ Uma versão online deste projeto pode ser encontrada em: https://palpite-box-leo
 - [Google Sheets](https://drive.google.com) - Google online spreadsheets
 - [Momentjs](https://momentjs.com/) - Working with dates
 - [React Hook Form](https://react-hook-form.com/get-started) - Forms
+- [Yup](https://www.npmjs.com/package/yup) - Consultor de esquemas para validação de valores
 - [SWR](https://swr.vercel.app/)
 
 ## 🏃 Início
